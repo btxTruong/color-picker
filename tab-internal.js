@@ -27,7 +27,7 @@ export class TabInternal {
   takeScreenshot() {
     const self = this;
 
-    chrome.tabs.captureVisibleTab(this.#tab.id, {format: 'png'}, async (dataUrl) => {
+    chrome.tabs.captureVisibleTab(self.#tab.windowId, {format: 'png'}, async (dataUrl) => {
       await self.sendMessage({
         type: 'screenCaptureUrl',
         tabWidth: self.#tab.width,
