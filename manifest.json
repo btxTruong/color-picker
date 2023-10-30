@@ -5,10 +5,11 @@
   "description": "Color picker",
   "author": "Truong Bui",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "scripting"
   ],
   "background": {
-    "service_worker": "service-worker.js",
+    "service_worker": "sw.js",
     "type": "module"
   },
   "action": {
