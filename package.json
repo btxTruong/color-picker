@@ -1,0 +1,70 @@
+{
+	"name": "color-picker",
+	"version": "0.0.1",
+	"description": "Color Picker for Dev",
+	"main": "index.js",
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": ">=18",
+		"pnpm": ">=8"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc --noEmit && vite build",
+		"preview": "vite preview",
+		"create-commitizen-friendly": "commitizen init cz-conventional-changelog --save-dev --save-exact",
+		"prepare": "husky install",
+		"lint": "eslint src --ext .ts",
+		"lint:fix": "pnpm lint -- --fix",
+		"prettier": "prettier src --check",
+		"prettier:fix": "pnpm prettier -- --write",
+		"format": "pnpm prettier:fix && pnpm lint:fix",
+		"//": "Prevent accidentally installing dependencies with anything else than pnpm",
+		"preinstall": "npx only-allow pnpm"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "18.2.0",
+		"@commitlint/config-conventional": "18.1.0",
+		"@typescript-eslint/eslint-plugin": "6.9.0",
+		"@typescript-eslint/parser": "6.9.0",
+		"chrome-types": "0.1.238",
+		"commitizen": "4.3.0",
+		"cross-env": "7.0.3",
+		"cz-conventional-changelog": "3.3.0",
+		"eslint": "8.52.0",
+		"eslint-config-prettier": "9.0.0",
+		"husky": "8.0.3",
+		"lint-staged": "15.0.2",
+		"prettier": "3.0.3",
+		"tslint-config-prettier": "1.18.0",
+		"typescript": "5.2.2",
+		"vite": "4.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/btxTruong/color-picker.git"
+	},
+	"keywords": [
+		"color-picker",
+		"chrome-extension"
+	],
+	"author": "Truong Bui",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/btxTruong/color-picker/issues"
+	},
+	"homepage": "https://github.com/btxTruong/color-picker#readme",
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"lint-staged": {
+		"*.{ts}": [
+			"prettier --write",
+			"eslint --fix"
+		]
+	},
+	"packageManager": "pnpm@8.10.0"
+}
