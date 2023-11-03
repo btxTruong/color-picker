@@ -1,0 +1,22 @@
+const manifest: chrome.runtime.ManifestV3 = {
+	manifest_version: 3,
+	version: '0.0.1',
+	name: 'Color picker',
+	description: 'Color picker',
+	author: 'Truong Bui',
+	permissions: ['activeTab', 'scripting'],
+	background: {
+		service_worker: 'service-worker/index.js',
+		type: 'module',
+	},
+	action: {
+		default_icon: {
+			16: 'images/dropper-16.png',
+			32: 'images/dropper-32.png',
+			48: 'images/dropper-48.png',
+			128: 'images/dropper-128.png',
+		},
+	},
+};
+
+export default manifest;
